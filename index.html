@@ -467,9 +467,9 @@
             return shuffled.slice(0, num);
         }
 
-        // Function to generate PDF link from report title
+        // Function to generate PDF link from report title (no spaces)
         function getPdfLink(title) {
-            const fileName = title.replace(/ /g, "_") + ".pdf";
+            const fileName = title.replace(/ /g, "") + ".pdf"; // Remove spaces
             return `pdfs/${fileName}`; // Adjust path as needed
         }
 
