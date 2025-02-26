@@ -534,18 +534,18 @@
             window.requestedReport = null;
         }
 
-        // Submit report email
+        // Submit report email and download immediately
         function submitReportEmail() {
             const email = document.getElementById('reportEmailInput').value;
             if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                 // Store email in sessionStorage
                 sessionStorage.setItem('userEmail', email);
                 console.log('Report email submitted:', email);
-                closeReportModal();
-                // Open the requested report PDF
+                // Open the requested report PDF immediately
                 if (window.requestedReport) {
                     window.open(getPdfLink(window.requestedReport), '_blank');
                 }
+                closeReportModal();
             } else {
                 alert('Please enter a valid email address');
             }
